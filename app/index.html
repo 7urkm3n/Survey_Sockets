@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Node Server | Express</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script type='text/javascript' src='/socket.io/socket.io.js'></script>
+	<script src='app.js'></script>
+</head>
+<style>
+	*{
+		margin-top: 20px;
+	}
+	hr{
+		border: 1px dashed black;
+	}
+	hr.vertically {
+            width: 0;
+            height: 100%;
+        }
+</style>
+<body>
+<div class="container well">
+	<h1 class='text-center'>Survey Result!</h1>
+		<div id="surveys"></div>
+	<hr>
+
+	<h1 class='text-center'>Survey Dojo!</h1>
+	<hr width='80%'>
+	<div class="row">
+		<div class="col-md-12">
+			<form onsubmit='return addSurvey(this)'>
+				<div class="text-center">
+					<label> Your Name: </label>
+					<input id='username' type="text required">
+					<br>
+					<label> Dojo Location: </label>
+					<select id='location' name="location">
+						<option value="Mountain View"> Mountain View</option>
+						<option value="Los Angeles"> Los Angeles</option>
+						<option value="Downtown Bellevue"> Downtown Bellevue</option>
+					</select><br>
+					<label> Favorite Language: </label>
+					<select id='language' name="language">
+						<option value="ruby"> Beauty Ruby</option>
+						<option value="js">Cool Javascript</option>
+						<option value="php"> Messy PHP</option>
+					</select><br>
+					<label> Comment (Optional): </label>
+					<br>
+					<textarea id='comment' name="comment" cols="70" rows="6"></textarea><br>
+				
+					<input class='btn btn-primary' type="submit" name='name' value='Send!'>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
